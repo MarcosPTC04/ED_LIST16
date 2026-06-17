@@ -1,150 +1,200 @@
-# 📌 Descrição
+# 📌 EDList16 — Estrutura de Dados I
 
-Este repositório apresenta a implementação da EDList16, desenvolvida para a disciplina de Estrutura de Dados I. O projeto tem como foco a resolução de exercícios teóricos e práticos envolvendo estruturas de dados lineares, explorando principalmente Pilha (Stack) e Fila (Queue) em diferentes abordagens.
+## 📖 Descrição
 
-As atividades abordam desde implementações estáticas e dinâmicas até desafios clássicos de manipulação de memória, inversão de estruturas e validação de padrões, sempre respeitando as restrições dos TADs (Tipos Abstratos de Dados).
+Este repositório contém a implementação da **EDList16**, desenvolvida para a disciplina de **Estrutura de Dados I**.
 
-# 🛠 Tecnologias Utilizadas
-Java
-IntelliJ IDEA
-Git
-GitHub
-📂 Estrutura do Projeto
-🔹 Estruturas Base
-Queue<T>
+O projeto explora a implementação e manipulação de estruturas de dados lineares em Java, com foco em:
 
-Interface que define operações fundamentais de uma fila:
+- Pilhas (Stack)
+- Filas (Queue)
+- Estruturas estáticas e dinâmicas
+- Resolução de problemas clássicos de TADs (Tipos Abstratos de Dados)
 
-push()
-pop()
-peek()
-isEmpty()
-Stack<T>
+Além das implementações base, o projeto inclui exercícios teóricos e práticos que abordam simulações, otimização de memória e manipulação de estruturas sob restrições.
 
-Interface base para estrutura de pilha:
+---
 
-push(T element)
-pop()
-top()
-isEmpty()
-LinkedQueue<T>
+## 🛠 Tecnologias Utilizadas
 
-Implementação dinâmica de fila usando lista encadeada (FIFO).
+- Java
+- IntelliJ IDEA
+- Git
+- GitHub
 
-LinkedStack<T>
+---
 
-Implementação dinâmica de pilha usando lista encadeada (LIFO).
+## 📂 Estrutura do Projeto
 
-ArrayStack<T>
+### 🔹 Queue<T>
+Interface base da estrutura de fila (FIFO):
 
-Implementação estática de pilha utilizando vetor com controle de capacidade.
+- push(T element)
+- pop()
+- peek()
+- isEmpty()
 
-QueueNode<T> / StackNode<T>
+---
 
+### 🔹 Stack<T>
+Interface base da estrutura de pilha (LIFO):
+
+- push(T element)
+- pop()
+- top()
+- isEmpty()
+
+---
+
+### 🔹 LinkedQueue<T>
+Implementação dinâmica de fila utilizando lista encadeada.
+
+✔ FIFO  
+✔ Crescimento dinâmico  
+
+---
+
+### 🔹 LinkedStack<T>
+Implementação dinâmica de pilha utilizando lista encadeada.
+
+✔ LIFO  
+✔ Operações em O(1) no topo  
+
+---
+
+### 🔹 ArrayStack<T>
+Implementação estática de pilha utilizando vetor.
+
+✔ Capacidade fixa  
+✔ Redimensionamento manual  
+
+---
+
+### 🔹 QueueNode / StackNode
 Nós utilizados nas estruturas encadeadas.
 
-# 🧠 Exercícios Implementados
-🔹 Questão 1 — Stack com Duas Filas
+---
 
-Implementação de uma Pilha (LIFO) utilizando exclusivamente duas filas (FIFO) como estrutura auxiliar.
+## 🧠 Exercícios da Lista (EDList16)
 
-✔ Operações:
+---
 
-push(T element)
-pop()
-top()
-isEmpty()
+### 🟦 Questão 1 — Stack com Duas Filas
 
-📌 Objetivo: simular comportamento LIFO usando apenas FIFO.
+Implementação de uma pilha (LIFO) utilizando apenas duas filas (FIFO).
 
-🔹 Questão 2 — Redimensionamento de Pilha Estática
+Operações:
+- push(T element)
+- pop()
+- top()
+- isEmpty()
 
-Implementação do método ensureCapacity() para uma pilha baseada em vetor.
+Objetivo: simular pilha usando filas.
 
-✔ Funcionalidade:
+---
 
-Dobra a capacidade do vetor quando atinge o limite
-Copia elementos mantendo ordem
-Atualiza referência do array
+### 🟦 Questão 2 — Redimensionamento de Pilha Estática
 
-📌 Objetivo: simular crescimento dinâmico sem usar lista encadeada.
+Implementação do método ensureCapacity().
 
-🔹 Questão 3 — DualStack (Duas Pilhas em Um Vetor)
+Funcionalidades:
+- Dobra o tamanho do vetor ao atingir limite
+- Copia elementos mantendo ordem
+- Atualiza referência interna
 
-Estrutura com duas pilhas compartilhando o mesmo array:
+Objetivo: simular crescimento dinâmico em estrutura estática.
 
-Pilha A cresce da esquerda para direita
-Pilha B cresce da direita para esquerda
+---
 
-✔ Funcionalidade:
+### 🟦 Questão 3 — DualStack (Dois Stacks em Um Vetor)
 
-pushA(int x)
-pushB(int x)
-Controle de overflow quando os ponteiros se encontram
+Duas pilhas compartilhando o mesmo vetor:
 
-📌 Objetivo: otimização de memória em vetor fixo.
+- Stack A cresce da esquerda para direita
+- Stack B cresce da direita para esquerda
 
-🔹 Questão 4 — LinkedStack (Push Otimizado)
+Operações:
+- pushA(int x)
+- pushB(int x)
 
-Implementação de pilha dinâmica garantindo:
+Objetivo: otimização de memória.
 
-✔ Operação push(T element) em O(1)
-✔ Inserção sempre no topo
-✔ Sem varredura de lista
+---
 
-📌 Objetivo: manter eficiência máxima em estrutura encadeada.
+### 🟦 Questão 4 — LinkedStack Otimizada
 
-🔹 Questão 5 — Remoção por Chave em Pilha
+Implementação de pilha dinâmica eficiente.
 
-Criação do método:
+- Inserção em O(1)
+- Uso de ponteiro top
+- Sem varredura de lista
 
+Objetivo: manter performance constante.
+
+---
+
+### 🟦 Questão 5 — Remoção por Chave em Pilha
+
+Método:
 removeElement(T target)
 
-✔ Remove elemento específico da pilha
-✔ Usa apenas operações básicas (push, pop, isEmpty)
-✔ Mantém ordem original dos demais elementos
+Funcionalidades:
+- Remove elemento específico
+- Usa apenas push, pop e isEmpty
+- Mantém ordem dos demais elementos
 
-📌 Objetivo: contornar restrição de acesso direto aos nós.
+Objetivo: manipular pilha respeitando restrições do TAD.
 
-🔹 Questão 6 — Verificação de Palíndromo
+---
 
-Algoritmo que verifica se uma sequência é palíndroma utilizando:
+### 🟦 Questão 6 — Verificação de Palíndromo
 
-Fila (LinkedQueue) → entrada sequencial
-Pilha (LinkedStack) → inversão lógica
+Estruturas utilizadas:
 
-✔ Compara elementos das duas estruturas
-✔ Determina se sequência é igual invertida
+- Fila (LinkedQueue) → leitura
+- Pilha (LinkedStack) → inversão
 
-📌 Exemplo:
+Funcionalidade:
+- Compara elementos
+- Verifica se sequência é palíndroma
 
-ARARA → verdadeiro
-RADAR → verdadeiro
-JAVA → falso
-⚙️ Funcionalidades Gerais
-Implementação de estruturas estáticas e dinâmicas
-Uso de generics <T>
-Simulação de LIFO usando FIFO
-Controle manual de memória em arrays
-Manipulação de nós encadeados
-Resolução de problemas clássicos de TAD
-Comparação entre abordagens diferentes
-# ▶️ Exemplo de Execução (Geral)
-Push: 10
-Push: 20
-Push: 30
+Exemplos:
+- ARARA → verdadeiro
+- RADAR → verdadeiro
+- JAVA → falso
 
-Stack:
-30 -> 20 -> 10
+---
 
-Pop:
-30
+## ⚙️ Funcionalidades Gerais
 
-Fila:
-10 -> 20
+- Estruturas estáticas e dinâmicas
+- Uso de generics <T>
+- Simulação de LIFO com FIFO
+- Controle manual de memória em arrays
+- Manipulação de nós encadeados
+- Resolução de problemas clássicos de estruturas de dados
 
-# 👨‍💻 Autor
+---
 
-Marcos Antonio de Oliveira Filho  
-Curso: Análise e Desenvolvimento de Sistemas  
-Disciplina: Estrutura de Dados I
+## ▶️ Exemplo de Execução
+
+Push: 10  
+Push: 20  
+Push: 30  
+
+Stack:  
+30 -> 20 -> 10  
+
+Pop:  
+30  
+
+Queue:  
+10 -> 20  
+
+---
+
+## 👨‍💻 Autor
+
+Marcos Antonio de Oliveira Filho   
+Análise e Desenvolvimento de Sistemas   
+Estrutura de Dados I
